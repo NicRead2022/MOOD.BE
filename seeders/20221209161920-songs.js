@@ -1,35 +1,35 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert(
-      'playlists',
+      'songs',
       [
         {
-          name: 'Sad Playlist 1',
+          songName: 'When the Partys Over',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          name: 'Sad Playlist 2',
+          songName: 'Someone You Loved',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          name: 'Rage Playlist 1',
+          songName: 'Misery Business',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          name: 'Rage Playlist 2',
+          songName: 'Mothers Daughter',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          name: 'Happy Playlist 1',
+          songName: 'Church',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          name: 'Happy Playlist 1',
+          songName: 'STRUT',
           createdAt: new Date(),
           updatedAt: new Date()
         }
@@ -39,6 +39,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('playlists', null, {})
+    return queryInterface.bulkDelete('songs', null, {})
   }
 }
