@@ -1,4 +1,4 @@
-const { Playlist , } = require('../models')
+const { Playlist , Songs } = require('../models')
 const songs = require('../models/playlist')
 
 
@@ -12,21 +12,49 @@ const CreatePlaylist = async (req, res) => {
   }
 }
 
-
-
 const DeletePlaylist = async (req, res) => {
   try {
-    await Song.destroy({ where: { id: req.params.song_id } })
+    await Playlist.destroy({ where: { id: req.params.playlist_id } })
     res.send({
-      msg: 'Song Deleted',
+      msg: 'Playlist Deleted',
       status: 'Ok'
     })
   } catch (error) {
     throw error
   }
 }
+const FindAllPlaylistWithSong = async (req, res) => {
+  try {
+    const playlist = await Playlist.findAll({ 
+      include: [
+        {
+          model: Songs, 
+          as:"playlist_songs"
+        }
+      ]
+    })
+    res.send(playlist)
+  } catch (error) {
+    throw error
+  }
+}
+const GetPlaylistByMood = async (req, res) => {
+  try {
+    const playlist = await Playlist.findAll({ 
+     where:{
+      moodId: req.params.mood_id
+     }
+    })
+    res.send(playlist)
+  } catch (error) {
+    throw error
+  }
+}
+
 
 module.exports = {
   CreatePlaylist,
-  DeletePlaylist
+  DeletePlaylist,
+  FindAllPlaylistWithSong,
+  GetPlaylistByMood
 }

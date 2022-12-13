@@ -12,6 +12,14 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      moodId: {
+        type: Sequelize.INTEGER,
+        onDelete: "CASCADE",
+        references: {
+          model: "moods",
+          key: "id"
+      }
+    },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

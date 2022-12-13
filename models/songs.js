@@ -10,14 +10,22 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Songs.belongsTo(models.Playlist, {foreignKey: "playlistId"})
     }
   }
   Songs.init({
-    songName: DataTypes.STRING
+    songName: DataTypes.STRING,
+    playlistId: {
+      type: DataTypes.INTEGER,
+      onDelete: "CASCADE",
+      references: {
+        model: "playlists",
+        key: "id"
+      }
+    }
   }, {
     sequelize,
-    modelName: 'Song',
+    modelName: 'Songs',
     tableName: 'songs'
   });
   return Songs;

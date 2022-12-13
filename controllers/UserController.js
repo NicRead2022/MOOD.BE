@@ -4,7 +4,8 @@ const songs = require('../models/user')
 
 
 
-const CreateUser = async (req, res) => {
+
+const CreateNewUser = async (req, res) => {
   try {
     const newUser = await User.create({ ...req.body })
     res.send(newUser)
@@ -26,7 +27,7 @@ const DeleteUser = async (req, res) => {
   }
 }
 
-export default {
-  CreateUser,
+module.exports = {
+  CreateNewUser,
   DeleteUser
 }

@@ -12,6 +12,14 @@ module.exports = {
       songName: {
         type: Sequelize.STRING
       },
+      playlistId:{
+        type: Sequelize.INTEGER,
+        onDelete: "CASCADE",
+        references: {
+        model: "playlists",
+        key: "id"
+      }
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
