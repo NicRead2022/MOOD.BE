@@ -9,6 +9,18 @@ const GetAllSongs = async (req, res) => {
     throw error
   }
 }
+const GetSongsByPlaylist = async (req, res) => {
+  console.log("here")
+  try {
+    const playlist_id = parseInt(req.params.playlist_id)
+    const songs = await Songs.findAll({
+      where: {playlistId:playlist_id}
+  })
+    res.send(songs)
+  } catch (error) {
+    throw error
+  }
+}
 
 const GetOneSong = async (req, res) => {
   try {
@@ -63,5 +75,6 @@ module.exports = {
   GetOneSong,
   CreateSong,
   UpdateSong,
-  DeleteSong
+  DeleteSong,
+  GetSongsByPlaylist
 }

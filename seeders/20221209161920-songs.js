@@ -10,7 +10,19 @@ module.exports = {
           updatedAt: new Date()
         },
         {
+          songName: 'Evermore',
+          playlistId: 1,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
           songName: 'Someone You Loved',
+          playlistId: 2,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          songName: 'All To Well',
           playlistId: 2,
           createdAt: new Date(),
           updatedAt: new Date()
@@ -23,19 +35,43 @@ module.exports = {
         },
         {
           songName: 'Mothers Daughter',
+          playlistId: 3,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          songName: 'In The End',
           playlistId: 4,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          songName: 'Church',
+          songName: 'River',
           playlistId: 4,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          songName: 'Need To Know',
+          playlistId: 5,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           songName: 'STRUT',
           playlistId: 5,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          songName: 'Church',
+          playlistId: 6,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          songName: 'I Like You',
+          playlistId: 6,
           createdAt: new Date(),
           updatedAt: new Date()
         }
